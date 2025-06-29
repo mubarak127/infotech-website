@@ -189,7 +189,8 @@ quoteForm.addEventListener('submit', function(e) {
 // Function to send data to Google Apps Script
 async function sendToGoogleSheet(data) {
     // Replace this URL with your actual Google Apps Script web app URL
-    const GAS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbypNkfRh4mgZxwF8GAkAIeylz68tgkKshN3RMJcVOKSChd_ezD1sP25Gzwkfx6Zgq0/exec';
+    // Make sure to create a NEW deployment with "Anyone" access
+    const GAS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzsAxyDg1vQ6fx1p_WE2w0090ui25nS-AgpntWmX2GxDT80Lka8qWHfMiSuxwmnORM/exec';
     
     try {
         // Check if we're running locally (file:// protocol)
@@ -230,6 +231,7 @@ async function sendToGoogleSheet(data) {
             console.error('- Use a local web server (python -m http.server 8000)');
             console.error('- Check your Google Apps Script deployment settings');
             console.error('- Verify the web app URL is correct');
+            console.error('- Make sure "Who has access" is set to "Anyone"');
         }
         
         throw error;
