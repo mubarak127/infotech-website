@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infotech International - Digital Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="#home">
+                        <img src="images/Logo/infotec logo.png" alt="Infotech International Logo" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="nav-cta">
+                    <button class="btn btn-primary" onclick="openQuoteModal()">Get A Quote</button>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('images/pexels-thisisengineering-3861952.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/pexels-fotios-photos-16129703.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/pexels-goumbik-574071.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('images/pexels-canvastudio-3194518.jpg');"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" id="heroTitle">Digital Agency That Thrives on Your Success</h1>
+                <p class="hero-description" id="heroDescription">
+                    INFOTECH International combines exceptional graphic and multimedia design with accessible online education, 
+                    empowering aspiring designers with the skills to succeed in the ever-evolving creative industry.
+                </p>
+                <button class="btn btn-primary btn-large" onclick="scrollToSection('services')">
+                    Find out how!
+                </button>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <div class="slider-dot active" onclick="goToSlide(0)"></div>
+            <div class="slider-dot" onclick="goToSlide(1)"></div>
+            <div class="slider-dot" onclick="goToSlide(2)"></div>
+            <div class="slider-dot" onclick="goToSlide(3)"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hire Us For</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/pexels-luis-gomes-166706-546819.jpg" alt="Graphic Design Services">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Our web design team has ample years of experience in the core areas of branding, logos, brochures, business cards, posters, and more.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/pexels-elevate-digital-784230-1647905.jpg" alt="Multimedia Design Services">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Multimedia Design</h3>
+                    <p>Looking out for customized solutions for video production, animation, interactive media, and web design? Our team will develop and deliver a solution that'll serve your purpose.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="images/pexels-rebrand-cities-581004-1367276.jpg" alt="Online Classes">
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Online Classes</h3>
+                    <p>Offering courses in graphic design, multimedia, and related disciplines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>At INFOTECH International, we blend creative design excellence with accessible online education to empower aspiring designers in the evolving world of design.</p>
+                    
+                    <div class="mission">
+                        <h3>Mission</h3>
+                        <p>Our mission is to provide innovative, high-quality graphic and multimedia design services while empowering the next generation of designers through comprehensive online education.</p>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/about.jpg" alt="About Infotech International" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us?</h2>
+                <p>We are the right term for your business. We have the expertise and knowledge to offer impartial advice and services at an honest price.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="images/pexels-hillaryfox-1595385.jpg" alt="We Care">
+                    </div>
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>We Care</h3>
+                    <p>With us you'll feel heard. We listen to our client requirements and then select the right solution that fits.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="images/pexels-thisisengineering-3861969.jpg" alt="Your Success">
+                    </div>
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Your Success</h3>
+                    <p>We care for your business as our own. We take a sincere interest in it and genuinely want to help your company reach its potential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-image">
+                    <img src="images/cta-img.jpg" alt="Project Discussion" class="cta-img">
+                </div>
+                <div class="cta-text">
+                    <h2>Have a Project in mind?</h2>
+                    <p>We can help you bring your ideas to life. Let's talk about what we can build and raise together.</p>
+                    <button class="btn btn-primary btn-large" onclick="openQuoteModal()">
+                        Connect with Us
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Growth Section -->
+    <section class="business-growth">
+        <div class="container">
+            <div class="growth-content">
+                <div class="growth-image">
+                    <img src="images/pexels-elevate-digital-784230-1647905.jpg" alt="Business Growth" class="growth-img">
+                </div>
+                <div class="growth-text">
+                    <h2>Let us together build a flourishing business</h2>
+                    <p>When connected with us, you aren't growing your business alone. We have your back and put in our best to contribute to the growth of your entire team and organization. So, if you are looking for the right agency that'll help you build a good online presence and bring in more conversions and revenue, we are right here!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for any inquiries or to discuss your project requirements.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>147, Oxford Street, London, UK</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>info@infotechinternational.uk</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+44 20 1234 5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.4092397534715!2d-0.1430!3d51.5154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b5113a783a5%3A0x2b066bd4cc2b914d!2sOxford%20St%2C%20London%2C%20UK!5e0!3m2!1sen!2sus!4v1234567890"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="#home">
+                        <img src="images/Logo/infotec logo.png" alt="Infotech International Logo" class="footer-logo">
+                    </a>
+                    <p>Your Trusted Partners</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>147, Oxford Street, London</p>
+                    <p>info@infotechinternational.uk</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Infotech International | Powered by Infotech International</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeQuoteModal()">&times;</span>
+            <h2>Get a Quote</h2>
+            <form id="quoteForm" class="quote-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone no.</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service</label>
+                    <select id="service" name="service" required>
+                        <option value="">- Select -</option>
+                        <option value="graphic-design">Graphic Design</option>
+                        <option value="multimedia-solution">Multimedia Solution</option>
+                        <option value="online-training">Online Training</option>
+                        <option value="it-consultancy">IT Consultancy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Method of Contact</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="contactMethod" value="phone"> Phone</label>
+                        <label><input type="radio" name="contactMethod" value="email"> Email</label>
+                        <label><input type="radio" name="contactMethod" value="other"> Other</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address1">Address Line 1</label>
+                    <input type="text" id="address1" name="address1">
+                </div>
+                <div class="form-group">
+                    <label for="address2">Address Line 2</label>
+                    <input type="text" id="address2" name="address2">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="zipCode">Zip Code</label>
+                        <input type="text" id="zipCode" name="zipCode">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="">Select Country</option>
+                            <option value="UK">United Kingdom (UK)</option>
+                            <option value="US">United States (US)</option>
+                            <!-- Add more countries as needed -->
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">Submit Form</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
