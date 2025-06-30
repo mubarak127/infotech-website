@@ -1,5 +1,9 @@
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    // Replace 'YOUR_EMAILJS_USER_ID' with your actual EmailJS user ID
+    emailjs.init('akb-H01Ynh9qlffSH');
+    
     // Hero Slider functionality
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slide');
@@ -151,6 +155,34 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Function to send email using EmailJS
+async function sendEmail(data) {
+    // EmailJS template parameters
+    const templateParams = {
+        to_name: 'Infotech International',
+        from_name: `${data.firstName} ${data.lastName}`,
+        from_email: data.email,
+        phone: data.phone,
+        service: data.service,
+        contact_method: data.contactMethod,
+        address: `${data.address1}${data.address2 ? ', ' + data.address2 : ''}, ${data.city}, ${data.state} ${data.zipCode}, ${data.country}`,
+        comments: data.comments,
+        timestamp: data.timestamp
+    };
+
+    try {
+        // Send email using EmailJS
+        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual EmailJS service and template IDs
+        const response = await emailjs.send('service_4x4jorj', 'template_7z1d1e6', templateParams);
+        
+        console.log('Email sent successfully:', response);
+        return response;
+    } catch (error) {
+        console.error('Error sending email:', error);
+        throw error;
+    }
+}
+
 // Quote form submission
 quoteForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -168,8 +200,8 @@ quoteForm.addEventListener('submit', function(e) {
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
     
-    // Send data to Google Apps Script
-    sendToGoogleSheet(data)
+    // Send email using EmailJS
+    sendEmail(data)
         .then(response => {
             showNotification('Quote request submitted successfully! We\'ll get back to you soon.', 'success');
             this.reset();
@@ -185,58 +217,6 @@ quoteForm.addEventListener('submit', function(e) {
             submitButton.disabled = false;
         });
 });
-
-// Function to send data to Google Apps Script
-async function sendToGoogleSheet(data) {
-    // Replace this URL with your actual Google Apps Script web app URL
-    // Make sure to create a NEW deployment with "Anyone" access
-    const GAS_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbzsAxyDg1vQ6fx1p_WE2w0090ui25nS-AgpntWmX2GxDT80Lka8qWHfMiSuxwmnORM/exec';
-    
-    try {
-        // Check if we're running locally (file:// protocol)
-        if (window.location.protocol === 'file:') {
-            console.warn('Running locally - CORS may be blocked. Consider using a local server.');
-            // For local testing, you can simulate the submission
-            console.log('Form data that would be sent:', data);
-            // Simulate a successful response for testing
-            return 'success (local testing)';
-        }
-        
-        const response = await fetch(GAS_WEBAPP_URL, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            mode: 'cors' // Explicitly set CORS mode
-        });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const result = await response.text();
-        console.log('Form submitted successfully:', result);
-        return result;
-    } catch (error) {
-        console.error('Error sending data to Google Sheet:', error);
-        
-        // If it's a CORS error, provide helpful information
-        if (error.message.includes('CORS') || error.message.includes('Failed to fetch')) {
-            console.error('CORS Error detected. This usually happens when:');
-            console.error('1. Running the site from file:// protocol (local files)');
-            console.error('2. Google Apps Script is not properly deployed');
-            console.error('3. Network connectivity issues');
-            console.error('Solutions:');
-            console.error('- Use a local web server (python -m http.server 8000)');
-            console.error('- Check your Google Apps Script deployment settings');
-            console.error('- Verify the web app URL is correct');
-            console.error('- Make sure "Who has access" is set to "Anyone"');
-        }
-        
-        throw error;
-    }
-}
 
 // Newsletter form submission
 newsletterForm.addEventListener('submit', function(e) {
